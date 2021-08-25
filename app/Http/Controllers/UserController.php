@@ -50,7 +50,6 @@ class UserController extends Controller
 
     //Fungsi login user 
     public function loginUser(Request $request){
-
         //Mencari user dari inputan user menggunakan email
         $user = User::where('email', $request['email'])->first();
 
@@ -63,7 +62,7 @@ class UserController extends Controller
             
             return response()->json([
                 "status"=>200,
-                "message"=>"success",
+                "message"=>"success",  
                 "token"=>$token,
                 "user"=>$user
             ],200);
@@ -72,8 +71,7 @@ class UserController extends Controller
             "status"=>401,
             "message"=>"failed",
         ],401);
-
-        
+    
     }
 
     //fungsi logout, menghapus token dari database
@@ -116,10 +114,10 @@ class UserController extends Controller
             $user->email = $input['email'];
         }
 
-        $passwordd = Hash::make($request->password);
-        if(isset($passwordd)){
-            $user->password = $input['password'];
-        }
+        // $passwordd = Hash::make($request->password);
+        // if(isset($passwordd)){
+        //     $user->password = $input['password'];
+        // }
 
         //save ke database
         $user->save();
@@ -131,6 +129,6 @@ class UserController extends Controller
     public function deleteUser($id){
         $user = User::find($id);
         $result = $user->delete();
-        return response()->json(compact('result', 'user'), 200);
+        return response()->json(compact('result'), 200);
     }
 }

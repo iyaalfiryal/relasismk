@@ -30,7 +30,6 @@ Route::post('books/update/{id}', [BookController::class, 'updateBook']);
 Route::delete('books/delete/{id}', [BookController::class, 'deleteBook']);
 
 Route::post('register', [UserController::class, 'registerUser']);
-
 Route::post('login', [UserController::class, 'loginUser']);
 Route::post('logout', [UserController::class, 'logoutUser']);
 Route::get('user/get/{id}', [UserController::class, 'getUser']);
