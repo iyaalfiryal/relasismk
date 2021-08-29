@@ -24,10 +24,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-Route::get('books/get/{id}', [BookController::class, 'readBook']);
-Route::post('books/create', [BookController::class, 'createBook']);
-Route::post('books/update/{id}', [BookController::class, 'updateBook']);
-Route::delete('books/delete/{id}', [BookController::class, 'deleteBook']);
 
 Route::post('register', [UserController::class, 'registerUser']);
 Route::post('login', [UserController::class, 'loginUser']);
@@ -35,3 +31,19 @@ Route::post('logout', [UserController::class, 'logoutUser']);
 Route::get('user/get/{id}', [UserController::class, 'getUser']);
 Route::post('user/update/{id}', [UserController::class, 'updateUser']);
 Route::delete('user/delete/{id}', [UserController::class, 'deleteUser']);
+
+Route::get('books/get/{id}', [BookController::class, 'readBook']);
+Route::post('books/create', [BookController::class, 'createBook']);
+Route::post('books/update/{id}', [BookController::class, 'updateBook']);
+Route::delete('books/delete/{id}', [BookController::class, 'deleteBook']);
+
+Route::get('authors/get/{id}', [BookController::class, 'getAuthor']);
+Route::post('authors/create', [BookController::class, 'createAuthor']);
+Route::post('authors/update/{id}', [BookController::class, 'updateAuthor']);
+Route::delete('authors/delete/{id}', [BookController::class, 'deleteAuthor']);
+
+Route::get('publisher/get/{id}', [BookController::class, 'getPublisher']);
+Route::post('publisher/create', [BookController::class, 'createPublisher']);
+Route::post('publisher/update/{id}', [BookController::class, 'updatePublisher']);
+Route::delete('publisher/delete/{id}', [BookController::class, 'deletPublisher']);
+

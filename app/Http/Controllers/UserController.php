@@ -113,12 +113,11 @@ class UserController extends Controller
         if(isset($request->email)){
             $user->email = $input['email'];
         }
-
-        // $passwordd = Hash::make($request->password);
-        // if(isset($passwordd)){
-        //     $user->password = $input['password'];
-        // }
-
+        
+        if(isset($passwordd)){
+            $user->password = Hash::make($input['password']);
+        }
+        
         //save ke database
         $user->save();
 
