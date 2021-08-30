@@ -14,7 +14,7 @@ class AuthorController extends Controller
         $data = $request->all();
 
         try{
-            $author = new Authors();
+            $author = new Authors;
             $author->name = $data['name'];
             $author->url = $data['url'];
             $author->description = $data['description'];

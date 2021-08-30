@@ -34,10 +34,10 @@ class Books extends Model
     ];
 
     public function author(){
-        return $this->hasMany(App\Models\Authors.php);
+        return $this->belongsTo(Authors::class);
     }  
 
     public function publisher(){
-        return $this->hasMany(App\Models\Authors.php);
+        return $this->belongsTo(Publishers::class);
     }
 }

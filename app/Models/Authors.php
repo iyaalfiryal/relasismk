@@ -16,7 +16,7 @@ class Authors extends Model
     ];
 
     public function book(){
-        return $this->belongsTo(App\Models\Books.php, 'author_id', 'id');
+        return $this->hasMany(Books::class);
     }
 
 }
